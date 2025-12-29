@@ -1,0 +1,25 @@
+{
+  "name": "catalogue-professionnel-ete-2026",
+  "version": "3.0.0",
+  "homepage": "https://yohand-byte.github.io/FASHIONWEEK2026",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.5.0",
+    "lucide-react": "^0.263.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1",
+    "gh-pages": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version"]
+  }
+}
