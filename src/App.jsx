@@ -164,7 +164,7 @@ const CatalogApp = () => {
             </div>
             <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 shadow-lg border border-amber-200">
               <p className="text-sm font-bold text-amber-900 mb-1">Taux de change</p>
-              <p className="text-3xl font-black text-amber-900">1 USD = {USD_TO_ILS} ₪</p>
+              <p className="text-3xl font-black text-amber-900">1 USD = {USD_TO_ILS.toFixed(2)} ₪</p>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@ const CatalogApp = () => {
               <p className="text-white font-bold text-sm">Prix NET Moyen</p>
               <DollarSign className="w-8 h-8 text-white/80" />
             </div>
-            <p className="text-4xl font-black text-white">{stats.avgNetILS} ₪</p>
+            <p className="text-4xl font-black text-white">{parseFloat(stats.avgNetILS).toFixed(2)} ₪</p>
             <p className="text-purple-100 text-sm mt-2 font-medium">Sans transport</p>
           </div>
           
@@ -194,7 +194,7 @@ const CatalogApp = () => {
               <p className="text-white font-bold text-sm">Transport Moyen</p>
               <TrendingUp className="w-8 h-8 text-white/80" />
             </div>
-            <p className="text-4xl font-black text-white">{stats.avgTransportILS} ₪</p>
+            <p className="text-4xl font-black text-white">{parseFloat(stats.avgTransportILS).toFixed(2)} ₪</p>
             <p className="text-blue-100 text-sm mt-2 font-medium">+8% du coût</p>
           </div>
           
@@ -203,7 +203,7 @@ const CatalogApp = () => {
               <p className="text-white font-bold text-sm">Prix Détail Moyen</p>
               <Store className="w-8 h-8 text-white/80" />
             </div>
-            <p className="text-4xl font-black text-white">{stats.avgDetail} ₪</p>
+            <p className="text-4xl font-black text-white">{parseFloat(stats.avgDetail).toFixed(2)} ₪</p>
             <p className="text-emerald-100 text-sm mt-2 font-medium">Marge {stats.avgMarginDetail}%</p>
           </div>
         </div>
@@ -223,12 +223,12 @@ const CatalogApp = () => {
             <div className="space-y-4">
               <div className="bg-pink-50 rounded-xl p-4 border border-pink-100">
                 <p className="text-xs font-bold text-pink-700 mb-2">PRIX D'ACHAT NET</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgNetILS * 0.33} / {stats.avgNetILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgNetILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgNetILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
                 <p className="text-xs font-bold text-orange-700 mb-2">COÛT TRANSPORT +8%</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgTransportILS * 0.33} / {stats.avgTransportILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgTransportILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgTransportILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -240,7 +240,7 @@ const CatalogApp = () => {
               
               <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-xl p-5 border-2 border-pink-300">
                 <p className="text-sm font-bold text-pink-800 mb-2">PRIX DE VENTE</p>
-                <p className="text-3xl font-black text-pink-600 mb-3">{stats.avgGrossiste} ₪</p>
+                <p className="text-3xl font-black text-pink-600 mb-3">{parseFloat(stats.avgGrossiste).toFixed(2)} ₪</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-bold text-pink-700">Marge brute:</span>
                   <span className="text-lg font-black text-pink-600">{stats.avgMarginGrossiste}%</span>
@@ -261,12 +261,12 @@ const CatalogApp = () => {
             <div className="space-y-4">
               <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
                 <p className="text-xs font-bold text-purple-700 mb-2">PRIX D'ACHAT NET</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgNetILS * 0.33} / {stats.avgNetILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgNetILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgNetILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
                 <p className="text-xs font-bold text-orange-700 mb-2">COÛT TRANSPORT +8%</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgTransportILS * 0.33} / {stats.avgTransportILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgTransportILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgTransportILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -278,7 +278,7 @@ const CatalogApp = () => {
               
               <div className="bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl p-5 border-2 border-purple-300">
                 <p className="text-sm font-bold text-purple-800 mb-2">PRIX DE VENTE</p>
-                <p className="text-3xl font-black text-purple-600 mb-3">{stats.avgClub} ₪</p>
+                <p className="text-3xl font-black text-purple-600 mb-3">{parseFloat(stats.avgClub).toFixed(2)} ₪</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-bold text-purple-700">Marge brute:</span>
                   <span className="text-lg font-black text-purple-600">{stats.avgMarginClub}%</span>
@@ -299,12 +299,12 @@ const CatalogApp = () => {
             <div className="space-y-4">
               <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
                 <p className="text-xs font-bold text-blue-700 mb-2">PRIX D'ACHAT NET</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgNetILS * 0.33} / {stats.avgNetILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgNetILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgNetILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
                 <p className="text-xs font-bold text-orange-700 mb-2">COÛT TRANSPORT +8%</p>
-                <p className="text-lg font-black text-gray-800">${stats.avgTransportILS * 0.33} / {stats.avgTransportILS} ₪</p>
+                <p className="text-lg font-black text-gray-800">${(Number(stats.avgTransportILS) * 0.33).toFixed(2)} / {parseFloat(stats.avgTransportILS).toFixed(2)} ₪</p>
               </div>
               
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -316,7 +316,7 @@ const CatalogApp = () => {
               
               <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-5 border-2 border-blue-300">
                 <p className="text-sm font-bold text-blue-800 mb-2">PRIX DE VENTE</p>
-                <p className="text-3xl font-black text-blue-600 mb-3">{stats.avgDetail} ₪</p>
+                <p className="text-3xl font-black text-blue-600 mb-3">{parseFloat(stats.avgDetail).toFixed(2)} ₪</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-bold text-blue-700">Marge brute:</span>
                   <span className="text-lg font-black text-blue-600">{stats.avgMarginDetail}%</span>
@@ -482,12 +482,12 @@ const CatalogApp = () => {
                       </td>
                       <td className="py-3 px-4 text-gray-800 font-bold text-xs">{p.sexe}</td>
                       <td className="py-3 px-4 text-gray-600 font-medium text-xs">{p.sous_categorie}</td>
-                      <td className="py-3 px-4 text-right text-purple-600 font-black text-xs">${p.prix_net_usd} / {p.prix_net_ils}₪</td>
-                      <td className="py-3 px-4 text-right text-orange-600 font-black text-xs">${p.transport_usd} / {p.transport_ils}₪</td>
-                      <td className="py-3 px-4 text-right text-gray-800 font-black">${p.prix_achat_usd} / {p.prix_achat_ils}₪</td>
-                      <td className="py-3 px-4 text-right text-pink-600 font-black">{p.prix_grossiste}₪</td>
-                      <td className="py-3 px-4 text-right text-purple-600 font-black">{p.prix_club}₪</td>
-                      <td className="py-3 px-4 text-right text-blue-600 font-black">{p.prix_detail}₪</td>
+                      <td className="py-3 px-4 text-right text-purple-600 font-black text-xs">${p.prix_net_usd?.toFixed(2)} / {p.prix_net_ils?.toFixed(2)}₪</td>
+                      <td className="py-3 px-4 text-right text-orange-600 font-black text-xs">${p.transport_usd?.toFixed(2)} / {p.transport_ils?.toFixed(2)}₪</td>
+                      <td className="py-3 px-4 text-right text-gray-800 font-black">${p.prix_achat_usd?.toFixed(2)} / {p.prix_achat_ils?.toFixed(2)}₪</td>
+                      <td className="py-3 px-4 text-right text-pink-600 font-black">{p.prix_grossiste?.toFixed(2)}₪</td>
+                      <td className="py-3 px-4 text-right text-purple-600 font-black">{p.prix_club?.toFixed(2)}₪</td>
+                      <td className="py-3 px-4 text-right text-blue-600 font-black">{p.prix_detail?.toFixed(2)}₪</td>
                       <td className="py-3 px-4 text-center text-pink-500">
                         {expandedProduct === p.modele ? <ChevronUp className="w-5 h-5 inline" /> : <ChevronDown className="w-5 h-5 inline" />}
                       </td>
@@ -506,25 +506,25 @@ const CatalogApp = () => {
                               <div className="space-y-3">
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Prix NET:</span>
-                                  <span className="font-black text-purple-600">${p.prix_net_usd} / {p.prix_net_ils}₪</span>
+                                  <span className="font-black text-purple-600">${p.prix_net_usd?.toFixed(2)} / {p.prix_net_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Transport:</span>
-                                  <span className="font-black text-orange-600">${p.transport_usd} / {p.transport_ils}₪</span>
+                                  <span className="font-black text-orange-600">${p.transport_usd?.toFixed(2)} / {p.transport_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Total achat:</span>
-                                  <span className="font-black text-gray-800">${p.prix_achat_usd} / {p.prix_achat_ils}₪</span>
+                                  <span className="font-black text-gray-800">${p.prix_achat_usd?.toFixed(2)} / {p.prix_achat_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent my-3"></div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Vente:</span>
-                                  <span className="font-black text-pink-600 text-xl">{p.prix_grossiste}₪</span>
+                                  <span className="font-black text-pink-600 text-xl">{p.prix_grossiste?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="bg-pink-100 rounded-xl p-3 border border-pink-200">
                                   <div className="flex justify-between items-center">
                                     <span className="text-pink-700 font-bold text-sm">Marge:</span>
-                                    <span className="font-black text-pink-600">{p.marge_grossiste_ils}₪ ({p.marge_grossiste_pct}%)</span>
+                                    <span className="font-black text-pink-600">{p.marge_grossiste_ils?.toFixed(2)}₪ ({p.marge_grossiste_pct}%)</span>
                                   </div>
                                 </div>
                               </div>
@@ -539,25 +539,25 @@ const CatalogApp = () => {
                               <div className="space-y-3">
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Prix NET:</span>
-                                  <span className="font-black text-purple-600">${p.prix_net_usd} / {p.prix_net_ils}₪</span>
+                                  <span className="font-black text-purple-600">${p.prix_net_usd?.toFixed(2)} / {p.prix_net_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Transport:</span>
-                                  <span className="font-black text-orange-600">${p.transport_usd} / {p.transport_ils}₪</span>
+                                  <span className="font-black text-orange-600">${p.transport_usd?.toFixed(2)} / {p.transport_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Total achat:</span>
-                                  <span className="font-black text-gray-800">${p.prix_achat_usd} / {p.prix_achat_ils}₪</span>
+                                  <span className="font-black text-gray-800">${p.prix_achat_usd?.toFixed(2)} / {p.prix_achat_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent my-3"></div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Vente:</span>
-                                  <span className="font-black text-purple-600 text-xl">{p.prix_club}₪</span>
+                                  <span className="font-black text-purple-600 text-xl">{p.prix_club?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="bg-purple-100 rounded-xl p-3 border border-purple-200">
                                   <div className="flex justify-between items-center">
                                     <span className="text-purple-700 font-bold text-sm">Marge:</span>
-                                    <span className="font-black text-purple-600">{p.marge_club_ils}₪ ({p.marge_club_pct}%)</span>
+                                    <span className="font-black text-purple-600">{p.marge_club_ils?.toFixed(2)}₪ ({p.marge_club_pct}%)</span>
                                   </div>
                                 </div>
                               </div>
@@ -572,25 +572,25 @@ const CatalogApp = () => {
                               <div className="space-y-3">
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Prix NET:</span>
-                                  <span className="font-black text-purple-600">${p.prix_net_usd} / {p.prix_net_ils}₪</span>
+                                  <span className="font-black text-purple-600">${p.prix_net_usd?.toFixed(2)} / {p.prix_net_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Transport:</span>
-                                  <span className="font-black text-orange-600">${p.transport_usd} / {p.transport_ils}₪</span>
+                                  <span className="font-black text-orange-600">${p.transport_usd?.toFixed(2)} / {p.transport_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Total achat:</span>
-                                  <span className="font-black text-gray-800">${p.prix_achat_usd} / {p.prix_achat_ils}₪</span>
+                                  <span className="font-black text-gray-800">${p.prix_achat_usd?.toFixed(2)} / {p.prix_achat_ils?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent my-3"></div>
                                 <div className="flex justify-between items-center">
                                   <span className="text-gray-600 font-bold text-sm">Vente:</span>
-                                  <span className="font-black text-blue-600 text-xl">{p.prix_detail}₪</span>
+                                  <span className="font-black text-blue-600 text-xl">{p.prix_detail?.toFixed(2)}₪</span>
                                 </div>
                                 <div className="bg-blue-100 rounded-xl p-3 border border-blue-200">
                                   <div className="flex justify-between items-center">
                                     <span className="text-blue-700 font-bold text-sm">Marge:</span>
-                                    <span className="font-black text-blue-600">{p.marge_detail_ils}₪ ({p.marge_detail_pct}%)</span>
+                                    <span className="font-black text-blue-600">{p.marge_detail_ils?.toFixed(2)}₪ ({p.marge_detail_pct}%)</span>
                                   </div>
                                 </div>
                               </div>
